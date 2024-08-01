@@ -7,7 +7,7 @@
 ### Prerequisites
 
 1. **Microsoft C++ Build Tools**:  
-   If you are using Windows, download and install the Microsoft C++ Build Tools from [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/). Follow the [setup instructions](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).
+   If you are using Windows, download and install the Microsoft C++ Build Tools from [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/).  Follow the   [setup instructions](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).
 
 2. **Install Dependencies**:  
    Run the following command to install required Python packages:
