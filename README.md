@@ -33,8 +33,8 @@
 ### Running the Script
 
 To execute the Python script, use the following command:
-```bash
-python src/excercise1/data_ingestion.py
+    ```bash
+    python src/excercise1/data_ingestion.py
 
 
 ## Exercise 2: PostgreSQL Setup
@@ -49,8 +49,8 @@ python src/excercise1/data_ingestion.py
 ### Run PostgreSQL Container
 
 Run the following command to start a PostgreSQL container:
-```bash
-docker run --name my-postgres -e POSTGRES_PASSWORD=<password> -p 5432:5432 -d postgres
+    ```bash
+    docker run --name my-postgres -e POSTGRES_PASSWORD=<password> -p 5432:5432 -d postgres
 
 This will set up a PostgreSQL database named postgres with the user postgres and the specified <password>, accessible on localhost at port 5432.
 
