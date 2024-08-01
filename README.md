@@ -6,3 +6,17 @@ And you need to follow these steps https://stackoverflow.com/questions/64261546/
 
 
 pip install -r /src/requirements.txt
+
+
+
+Inside configs.py
+api_key -> This is the infuria api key (It is not a good practice to do it like this. It would have been saved in the secrets inside the cloud provider)
+start_block -> Starting block inclusive
+end_block -> Ending block inclusive
+address -> Address being filtered
+value -> Value being filtered
+filtering -> It can take 4 options:
+- 'address_to' which filters to which address is the transaction being done
+- 'address_from' which filters from which address is the transaction being done
+- 'value_gt' which filters values greater than
+- 'value_lt' which filters values lower than
