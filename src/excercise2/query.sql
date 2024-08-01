@@ -12,8 +12,7 @@ INSERT INTO currency_stock (timestamp, address, token, amount, price_in_eth, row
 SELECT timestamp, address, token, amount, price_in_eth, ROW_NUMBER() OVER (PARTITION BY token, address ORDER BY timestamp) AS row_number
 FROM transactions;
 
-
-DROP FUNCTION sell_currency_stock(character varying,character varying,numeric);
+DROP function if EXISTS sell_currency_stock(character varying,character varying,numeric);
 CREATE OR REPLACE FUNCTION sell_currency_stock(
     requested_address VARCHAR,
     requested_token VARCHAR,
@@ -56,18 +55,18 @@ END;
 $$
 LANGUAGE plpgsql;
 
-SELECT * FROM sell_currency_stock('a1', 't1', 13);
-
-
-
-
 WITH DailyTransactions AS (
   SELECT
     timestamp,
     address,
     token,
     SUM(CASE WHEN action LIKE 'buy' THEN amount ELSE -amount END) AS net_amount,
-    SUM(CASE WHEN action LIKE 'buy' THEN amount * price_in_eth ELSE -amount * price_in_eth END) AS net_priced_amount
+    SUM(CASE WHEN action LIKE 'buy' THEN amount * price_in_eth ELSE -(
+        SELECT SUM(product) FROM (
+        	SELECT ret_amount * price as product
+        	FROM sell_currency_stock(address, token, amount)
+        )
+    ) END) AS net_priced_amount
   FROM transactions
   GROUP BY timestamp, address, token
 ),
@@ -83,6 +82,3 @@ CumulativeBalances AS (
 SELECT *
 FROM CumulativeBalances
 ORDER BY timestamp, address;
-
-
-
