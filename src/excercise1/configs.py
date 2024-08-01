@@ -5,4 +5,4 @@ address = '0x974CaA59e49682CdA0AD2bbe82983419A2ECC400'
 value = 1100000000000000000
 filtering = 'address_to'
 folder_path = 'output'
-file_name = 'data.json'
+file_name = 'data2'

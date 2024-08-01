@@ -54,7 +54,7 @@ def main() -> None:
     value = configs.value
     filtering = configs.filtering
     folder_path = configs.folder_path
-    file_name = configs.file_name
+    file_name = configs.file_name + '.json'
     
     transactions = {}
     for block_number in range(start_block, end_block + 1):
