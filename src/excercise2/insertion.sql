@@ -1,3 +1,12 @@
+CREATE TABLE transactions (
+    timestamp DATE,
+    address VARCHAR(50),
+    action VARCHAR(4),
+    token VARCHAR(10),
+    amount INT,
+    price_in_eth DECIMAL(10, 2)
+);
+
 INSERT INTO transactions (timestamp, address, action, token, amount, price_in_eth) VALUES
 ('2020-01-01', 'a1', 'buy', 't1', 10, 340),
 ('2020-01-02', 'a1', 'buy', 't1', 5, 300),
