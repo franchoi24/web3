@@ -63,7 +63,6 @@ You can either open your IDE and execute the `insertion.sql` file directly or fo
 
 2. **Execute SQL Script:**:
    ```bash
-    docker cp ./src/excercise2/insertion.sql my-postgres:/docker-entrypoint-initdb.d/dump.sql
     docker exec -u postgres my-postgres psql -d postgres -f /docker-entrypoint-initdb.d/dump.sql
 
 Then you can execute the query with the same method or with your IDE
