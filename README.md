@@ -14,8 +14,6 @@
    ```bash
    pip install -r src/excercise1/requirements.txt
 
-
-
 ### Configuration in `configs.py`
 
 - **`api_key`**: This is the Infura API key. *(Note: It is not a good practice to store sensitive information like this directly in the code. It should be stored securely in secrets management provided by your cloud provider.)*
