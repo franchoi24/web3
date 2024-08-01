@@ -45,7 +45,6 @@ To execute the Python script, use the following command:
    ```bash
    docker pull postgres
 
-
 ### Run PostgreSQL Container
 
 Run the following command to start a PostgreSQL container:
