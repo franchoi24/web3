@@ -67,6 +67,12 @@ You can either open your IDE and execute the `insertion.sql` file directly or fo
 
 Then you can execute the query with the same method or with your IDE
 
+**Exercise 3**
 
+The assumptions taken for the construction of the data warehouse are as follows:
 
-
+* Information is taken from a normalized database. Therefore, when denormalized there is no need to restrict the values of fields such as transaction type and protocol type.
+* Users register with email and a unique address for wallet.
+* Performance is key, instead of data repetition.
+* Tables where timestamp is added are where the data requires tracking of when events occur.
+* ETLs are executed through batches many times a day.
